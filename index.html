@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AÇO REAL - Metalomecânica</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      line-height: 1.6;
+      color: white; /* texto branco para legibilidade */
+      background: oklab(30.384% -0.01014 -0.06586);
+    }
+
+    header {
+      background: #ffffff;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header img {
+      width: 200px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: oklab(30.384% -0.01014 -0.06586);
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background: #fdb813;
+      color: #000;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581092334424-84db45f3b779') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+   h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white; /* mudou de #002147 para branco */
+}
+
+    .about, .services, .contact {
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: #f2f2f2;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      color: #333; /* cor do texto para legibilidade no fundo claro */
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer; /* muda cursor para indicar clicável */
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact form {
+      display: grid;
+      gap: 15px;
+      max-width: 6000px;
+      margin: auto;
+    }
+
+    .contact input, .contact textarea {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px; /* aumenta o tamanho da letra */
+      color: #333; /* texto escuro para campos */
+      background: #fff;
+    }
+
+    .contact button {
+      background: #002147;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background: #fdb813;
+      color: black;
+    }
+
+    footer {
+      background: #1b2e50;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer .socials a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+
+    footer .socials a:hover {
+      color: #fdb813;
+    }
+
+    /* Estilo para o lightbox */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px white;
+    }
+
+    #fechar {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://www.simpleimageresizer.com/_uploads/photos/ccbad47e/2023-11-16_1_900x722.jpg" alt="Logo Aço Real">
+    <h1>AÇO REAL - Metalomecânica, Unip. Lda</h1>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Projetos</a>
+    <a href="#contactos">Contactos</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Excelência em Soluções de Metalomecânica</h1>
+  </div>
+
+  <section id="sobre" class="about">
+    <h2>Sobre Nós</h2>
+    <h3>A Aço Real é uma empresa especializada em soluções de metalomecânica com foco na qualidade, inovação e satisfação dos nossos clientes. Atuamos com excelência em fabrico, montagem e manutenção de estruturas metálicas.</h3>
+  </section>
+
+  <section id="servicos" class="services">
+    <h2>Serviços</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>Estruturas Metálicas</h3>
+        <p>Fabrico e montagem de estruturas metálicas de pequena e grande escala.</p>
+      </div>
+      <div class="service">
+        <h3>Serralharia Civil</h3>
+        <p>Portões, grades, escadas metálicas e soluções personalizadas.</p>
+      </div>
+      <div class="service">
+        <h3>Corte e Dobra</h3>
+        <p>Precisão no corte e dobra de chapas metálicas sob medida.</p>
+      </div>
+      <div class="service">
+        <h3>Projetos Personalizados</h3>
+        <p>Desenvolvemos soluções técnicas adaptadas à sua necessidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria de Projetos</h2>
+    <div class="gallery">
+      <img src="https://scontent-lis1-1.xx.fbcdn.net/v/t39.30808-6/474986594_122179997222114314_1060133962991495089_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=x9avg5X96IkQ7kNvwEyhAOm&_nc_oc=Admmaxc64aUQA6IvMjwrpxBS4GGwKSSDriWcQIOM1PO2hd6-Ly_skbkiNJCx61Xf2JKQB8-ZOH34E7PsU3EE0Dxj&_nc_zt=23&_nc_ht=scontent-lis1-1.xx&_nc_gid=m18Y6mWB-JStDkLhwtyTJw&oh=00_AfQoIQKYF-l1432KmldbVjvX0aGKZ3zTpMsGUFbI_PEyCg&oe=689187AB" alt="Projeto 1">
+      <img src="https://scontent-lis1-1.xx.fbcdn.net/v/t39.30808-6/475133071_122179997846114314_8836396761092482634_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=cXcMrCE2OSUQ7kNvwE2bnbm&_nc_oc=Adk1wHMpEfwv0n4qS3im94Ck0RLXRfxa67eOS1gh5xAbPUCYZe2QNJErC-950kzKORJnPD9Tpwxsi5DKiwe1_Rrv&_nc_zt=23&_nc_ht=scontent-lis1-1.xx&_nc_gid=cpwOou1inP7YMtTDrX_ZFA&oh=00_AfQ9JE5IrZGw2W8nmAVGD0M3jve5HbValb-sIhDtIo5DFg&oe=68906258" alt="Projeto 2">
+      <img src="https://scontent-lis1-1.xx.fbcdn.net/v/t39.30808-6/474639583_122179545752114314_2192514176600508172_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3wJ0ThHIEo8Q7kNvwG6wHWC&_nc_oc=AdlZGNQiTB1hR_rWmvEYlqgG1b-28YNt1vnTQVObTuCQdRYaznlsUi5aPoIojllCpR4BYowxEe1agkEQncM-Qu3y&_nc_zt=23&_nc_ht=scontent-lis1-1.xx&_nc_gid=6vl3T5e9QwzhHaM7iyuegA&oh=00_AfQQOkKUyWRHGcL8-syEjZS6WzXBkI_4yui2yq3MjYRg7Q&oe=68905FB7" alt="Projeto 3">
+      <img src="https://scontent-lis1-1.xx.fbcdn.net/v/t39.30808-6/474854668_122179997366114314_8924317228433670035_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=undwGCIK_4YQ7kNvwFwPre8&_nc_oc=AdnuCRUpAlFzAILinr7WONn7eDmd_5WnoWrN1JfeHktm6w_Te9_no60Hvj-_Ai_Z9Fk789_6MCdTXv49AIKNr5IA&_nc_zt=23&_nc_ht=scontent-lis1-1.xx&_nc_gid=_YrAp0MbiXSot8Fd2yPTFg&oh=00_AfRhhdquo1-hZJ2T9PIGw5cmyYwTTT0HzZTXzX4w8Xx7cw&oe=68904E18" alt="Projeto 4">
+    </div>
+  </section>
+
+  <section id="contactos" class="contact">
+    <h2>Contacte-nos</h2>
+    <form action="https://formsubmit.co/acoreal@sapo.pt" method="POST">
+      <input type="text" name="name" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" rows="5" placeholder="Mensagem" required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AÇO REAL - Metalomecânica, Unip. Lda. Todos os direitos reservados.</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/acorealmetalomecanica/?locale=pt_PT"><i class="fab fa-facebook"></i></a>
+     <a class="social-link Whatsapp" href="tel:+351963405780">
+    Ligar   
+</a>
+    </div>
+  </footer>
+
+  <!-- Lightbox para imagem ampliada -->
+  <div id="lightbox">
+    <span id="fechar">&times;</span>
+    <img id="imagem-grande" src="" alt="Imagem ampliada" />
+  </div>
+
+  <script>
+    // Seleciona todas as imagens da galeria
+    const imagens = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const imagemGrande = document.getElementById('imagem-grande');
+    const fechar = document.getElementById('fechar');
+
+    imagens.forEach(img => {
+      img.addEventListener('click', () => {
+        imagemGrande.src = img.src; // coloca a imagem clicada no lightbox
+        lightbox.style.display = 'flex'; // mostra o lightbox
+      });
+    });
+
+    // Fechar ao clicar no X
+    fechar.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      imagemGrande.src = '';
+    });
+
+    // Fechar ao clicar fora da imagem (no fundo)
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        imagemGrande.src = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
